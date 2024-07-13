@@ -7,22 +7,20 @@ class LoadingWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: SizedBox(
-        height: 24,
-        width: 24,
-        child: kIsWeb || Platform.isAndroid
-            ? CircularProgressIndicator(
-                color: color ?? AppColors.primaryColor,
-                value: value,
-              )
-            : Platform.isIOS
-                ? CupertinoActivityIndicator(
-                    color: color ?? AppColors.primaryColor)
-                : CircularProgressIndicator(
-                    color: color ?? AppColors.primaryColor,
-                  ),
-      ),
+    return SizedBox(
+      height: 24,
+      width: 24,
+      child: kIsWeb || Platform.isAndroid
+          ? CircularProgressIndicator(
+              color: color ?? AppColors.primaryColor,
+              value: value,
+            )
+          : Platform.isIOS
+              ? CupertinoActivityIndicator(
+                  color: color ?? AppColors.primaryColor)
+              : CircularProgressIndicator(
+                  color: color ?? AppColors.primaryColor,
+                ),
     );
   }
 }

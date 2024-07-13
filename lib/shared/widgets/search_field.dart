@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import '../../../core/constants/app_color.dart';
 import '../../features/weather/controller/weather_controller.dart';
@@ -16,6 +17,7 @@ class SearchField extends StatelessWidget {
         controller: controller.cityController,
         keyboardType: TextInputType.text,
         textAlign: TextAlign.start,
+        textCapitalization: TextCapitalization.words,
         onChanged: (value) {
           controller.debouncing(fn: () {
             controller.update();
@@ -26,10 +28,10 @@ class SearchField extends StatelessWidget {
             controller.searchOnTap();
           }
         },
-        style: const TextStyle(
+        style: TextStyle(
             color: AppColors.lightTextColor,
             fontWeight: FontWeight.w400,
-            fontSize: 16),
+            fontSize: 16.sp),
         decoration: InputDecoration(
           suffixIcon: controller.cityController.text.isNotEmpty
               ? InkWell(
@@ -62,12 +64,12 @@ class SearchField extends StatelessWidget {
           isDense: true,
           contentPadding: const EdgeInsets.all(12),
           floatingLabelAlignment: FloatingLabelAlignment.start,
-          hintText: 'Search city',
+          hintText: 'Search location',
           floatingLabelBehavior: FloatingLabelBehavior.auto,
-          hintStyle: const TextStyle(
+          hintStyle: TextStyle(
               color: AppColors.lightSecondaryTextColor,
               fontWeight: FontWeight.w300,
-              fontSize: 16),
+              fontSize: 16.sp),
         ),
       );
     });

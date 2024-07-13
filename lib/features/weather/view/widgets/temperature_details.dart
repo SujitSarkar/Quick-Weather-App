@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import '../../../../features/weather/model/weather_model.dart';
 import '../../../../shared/utils/utils.dart';
 import '../../../../shared/widgets/text_widget.dart';
@@ -12,9 +13,17 @@ class TemperatureDetails extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        TitleText(
-          text: '${kelvinToCelcius(tempInKelvin: weather.main?.temp ?? 0.0)}°',
-          textsize: 70.sp,
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.end,
+          children: [
+            TitleText(
+              text:
+                  '${kelvinToCelcius(tempInKelvin: weather.main?.temp ?? 0.0)}°',
+              textsize: 70.sp,
+            ),
+            const BodyText(text: 'C').paddingOnly(bottom: 16)
+          ],
         ),
         BodyText(
             text:

@@ -95,8 +95,6 @@ class ApiClient {
   }
 
   void logResponse(Response response) {
-    debugPrint(
-        'Authorization   : ${response.requestOptions.headers['Authorization']}');
     debugPrint('URL             : ${response.requestOptions.uri}');
     debugPrint('STATUS CODE     : ${response.statusCode}');
     debugPrint('RESPONSE        : ${response.data}\n');
@@ -125,6 +123,8 @@ class ApiClient {
   }
 
   ApiException _handleDioException(DioException e) {
+    // hide keyboard
+    SystemChannels.textInput.invokeMethod('TextInput.hide');
     if (e.response != null) {
       logResponse(e.response!);
       switch (e.response?.statusCode) {

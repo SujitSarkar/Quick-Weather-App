@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
-import 'package:quick_weather_app/shared/utils/utils.dart';
+import '../../../../shared/utils/utils.dart';
 import '../../../../core/constants/app_color.dart';
 import '../../../../shared/widgets/text_widget.dart';
 import '../../model/weather_model.dart';
@@ -21,12 +21,13 @@ class SunriseSunsetWidget extends StatelessWidget {
             Column(
               children: [
                 const BodyText(
-                  text: 'Time',
+                  text: 'Last update',
                   textColor: AppColors.lightSecondaryTextColor,
                   fontWeight: FontWeight.bold,
                 ).paddingOnly(bottom: 8),
                 BodyText(
-                  text: DateFormat('hh:mm aa').format(DateTime.now()),
+                  text: DateFormat('hh:mm aa').format(
+                      DateTime.fromMillisecondsSinceEpoch(weather.dt! * 1000)),
                   fontWeight: FontWeight.bold,
                 )
               ],

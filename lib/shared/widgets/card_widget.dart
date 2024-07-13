@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import '../../core/constants/app_color.dart';
 
 class CardWidget extends StatelessWidget {
@@ -26,12 +25,6 @@ class CardWidget extends StatelessWidget {
       decoration: BoxDecoration(
         color: AppColors.lightCardColor,
         borderRadius: BorderRadius.all(Radius.circular(borderRadius)),
-        // boxShadow: [
-        //   BoxShadow(
-        //       color: Colors.grey.shade200,
-        //       blurRadius: 8,
-        //       offset: const Offset(1, 4))
-        // ],
       ),
       child: child,
     );
