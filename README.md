@@ -36,14 +36,17 @@ After the dependencies are installed, you can run the Flutter project using the 
 
 This command will build the project and launch it on a connected device or emulator.
 
-
 ### Verify Installation:
 Once the build process is complete, you should see the Flutter app running on your device or emulator.
 
 That's it! You have successfully cloned the Flutter project from the given repository and run it on your local environment. You can now explore the project and make any necessary modifications.
 
-### Project structure:
-This project is structured by following MVC pattern. Also added service class for decoupling.
+## Project structure:
+This project is structured by following MVC pattern.<br>
+Used Getx for state management.
+
+## App download link
+You can also download and install the app from this link https://drive.google.com/drive/folders/10HXNix29Bp004Q8ryyj_ozXyYEKy6RG0?usp=sharing.
 
 ## App Screenshots
 | Home screen                                    | Weather by city                                   |
